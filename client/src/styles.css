@@ -99,8 +99,10 @@ a { color: var(--primary); }
 /* ---------- forms ---------- */
 .field { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.8rem; }
 .field.inline { margin-bottom: 0; }
+.field.inline input { width: auto; }
 label { font-size: 0.85rem; font-weight: 600; }
 input, select {
+  width: 100%; min-width: 0;
   font: inherit; padding: 0.55rem 0.7rem; border: 1px solid var(--border);
   border-radius: 8px; background: var(--surface); color: var(--text);
 }
@@ -108,7 +110,7 @@ input:focus, select:focus, .btn:focus-visible {
   outline: 2px solid var(--primary); outline-offset: 1px;
 }
 input[aria-invalid='true'] { border-color: var(--danger); }
-.reading-form { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 0.75rem; }
+.reading-form { display: grid; grid-template-columns: 1fr 1.3fr 0.9fr; gap: 0 0.75rem; }
 .reading-form .form-error, .reading-form .form-actions { grid-column: 1 / -1; }
 @media (max-width: 560px) { .reading-form { grid-template-columns: 1fr; } }
 .modal .reading-form { grid-template-columns: 1fr; }

@@ -63,9 +63,10 @@ async function seed() {
     for (const slot of SLOT_KEYS) {
       // Skip ~15% of readings so some days are incomplete (more realistic, and
       // useful for testing the "fewer than 4 readings" states).
-      if (rand() < 0.15) continue;
-      // Leave today's evening slot free so the reviewer can try adding a reading.
-      if (date === today && slot === 'after_dinner') continue;
+      // Today always gets 3 readings, leaving the evening slot free to try adding one.
+      if (date === today) {
+        if (slot === 'after_dinner') continue;
+      } else if (rand() < 0.15) continue;
       const [min, max] = RANGES[slot];
       let value = Math.round(min + rand() * (max - min));
       if (rand() < 0.04) value = Math.round(240 + rand() * 80); // occasional spike

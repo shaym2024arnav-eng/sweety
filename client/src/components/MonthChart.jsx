@@ -52,7 +52,7 @@ export default function MonthChart({ chart }) {
               {/* Shaded 70–180 band: a common target range */}
               <ReferenceArea y1={70} y2={180} fill="var(--ok-bg)" fillOpacity={0.6} />
               <XAxis dataKey="day" tickLine={false} axisLine={false} fontSize={12} />
-              <YAxis domain={[40, 'auto']} tickLine={false} axisLine={false} fontSize={12} />
+              <YAxis domain={[0, 'auto']} tickLine={false} axisLine={false} fontSize={12} />
               <Tooltip
                 labelFormatter={(d) => `Day ${d}`}
                 formatter={(v, key) => [`${v} mg/dl`, SLOTS.find((s) => s.key === key)?.label]}
@@ -66,6 +66,7 @@ export default function MonthChart({ chart }) {
                   strokeWidth={2}
                   dot={{ r: 2.5 }}
                   connectNulls
+                  isAnimationActive={false}
                 />
               ))}
             </LineChart>
