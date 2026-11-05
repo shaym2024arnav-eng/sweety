@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 
 const required = (name, fallback) => {
   const value = process.env[name] ?? fallback;
