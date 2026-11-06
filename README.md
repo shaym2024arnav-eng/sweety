@@ -42,6 +42,9 @@ sweety/
 │       ├── pages/          Auth, Dashboard, History
 │       └── __tests__/      React Testing Library tests
 ├── docs/screenshots/
+
+
+
 └── docker-compose.yml
 ```
 
@@ -165,7 +168,9 @@ The UI checks give instant feedback; the API repeats every check because the UI 
 The database constraints are the last line of defence (e.g. two requests arriving at the same moment).
 
 ## Screenshots
+**Demo video:** [Watch the demo]https://drive.google.com/file/d/14ExEcXULVB9Ry5j5fOoYr8TLsjoBrOwb/view?usp=sharing
 
+| | |
 | | |
 | --- | --- |
 | ![Login](docs/screenshots/01-login.png) | ![Dashboard](docs/screenshots/02-dashboard.png) |
